@@ -1,0 +1,7 @@
+library("arules")
+library(readxl)
+mydata <- read_xlsx(file.choose(),1)
+View(mydata)
+rules <-  apriori(as.matrix(mydata[,2:7]),parameter=list(support=0.5,confidence=0.9)) 
+inspect(rules)
+inspect(sort(rules, by="lift"))
