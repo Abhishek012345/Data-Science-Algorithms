@@ -1,0 +1,5 @@
+View(wc.at)
+reg_log <- lm(wc.at$AT ~ log(wc.at$Waist))
+summary(reg_log)
+reg_log1 <- lm(log(wc.at$AT)~wc.at$Waist)
+summary(reg_log1)
